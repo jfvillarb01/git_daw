@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Ejercicio1 {
@@ -6,27 +7,24 @@ public class Ejercicio1 {
 
         Scanner sc = new Scanner(System.in);
 
+        ArrayList<Integer> numeros = new ArrayList<>();
+
         System.out.print("Cantidad de números: ");
         int cantidad = sc.nextInt();
 
-        int[] numeros = new int[cantidad];
-
         for (int i = 0; i < cantidad; i++) {
-            numeros[i] = sc.nextInt();
+            numeros.add(sc.nextInt());
         }
 
-        for (int i = 0; i < numeros.length; i++) {
+        System.out.print("Número a eliminar: ");
+        int eliminar = sc.nextInt();
 
-            int contador = 0;
+        numeros.remove(Integer.valueOf(eliminar));
 
-            for (int j = 0; j < numeros.length; j++) {
+        System.out.println("Array final:");
 
-                if (numeros[i] == numeros[j]) {
-                    contador++;
-                }
-            }
-
-            System.out.println(numeros[i] + " se repite " + contador + " veces");
+        for (int n : numeros) {
+            System.out.println(n);
         }
     }
 }
