@@ -14,10 +14,13 @@ public class Ejercicio3 {
 
         Arrays.sort(numeros);
 
-        System.out.println("Array ordenado de mayor a menor:");
+        System.out.println("Numeros pares:");
 
         for (int i = numeros.length - 1; i >= 0; i--) {
-            System.out.println(numeros[i]);
+
+            if (numeros[i] % 2 == 0) {
+                System.out.println(numeros[i]);
+            }
         }
     }
 }
