@@ -6,40 +6,26 @@ public class Ejercicio2 {
 
         Scanner sc = new Scanner(System.in);
 
-        int[] edades = new int[5];
+        int[] edades = new int[5]; // array de edades
+        boolean todosMayores = true;
 
-        int rango1 = 0; // 0-17
-        int rango2 = 0; // 18-30
-        int rango3 = 0; // 31-50
-        int rango4 = 0; // 51+
-
-        // Pedir edades
+        // pedir edades
         for (int i = 0; i < edades.length; i++) {
-            System.out.print("Introduce una edad: ");
+            System.out.print("Introduce edad: ");
             edades[i] = sc.nextInt();
         }
 
-        // Clasificar edades
+        // comprobar si todos son mayores
         for (int e : edades) {
 
-            if (e <= 17) {
-                rango1++;
-            } else if (e <= 30) {
-                rango2++;
-            } else if (e <= 50) {
-                rango3++;
-            } else {
-                rango4++;
+            if (e < 18) {
+                todosMayores = false;
+                break; // salir si encontramos un menor
             }
 
         }
 
-        // Mostrar resultados
-        System.out.println("\nResultados por rangos de edad:");
-        System.out.println("0 - 17 años: " + rango1);
-        System.out.println("18 - 30 años: " + rango2);
-        System.out.println("31 - 50 años: " + rango3);
-        System.out.println("51 o más años: " + rango4);
+        System.out.println("¿Todas las personas son mayores de edad?: " + todosMayores);
 
         sc.close();
     }
