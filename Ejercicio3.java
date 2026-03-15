@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 public class Ejercicio3 {
@@ -11,10 +12,12 @@ public class Ejercicio3 {
             numeros[i] = rand.nextInt(100) + 1;
         }
 
-        System.out.println("Array generado:");
+        Arrays.sort(numeros);
 
-        for (int n : numeros) {
-            System.out.println(n);
+        System.out.println("Array ordenado de mayor a menor:");
+
+        for (int i = numeros.length - 1; i >= 0; i--) {
+            System.out.println(numeros[i]);
         }
     }
 }
