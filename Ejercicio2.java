@@ -11,10 +11,21 @@ public class Ejercicio2 {
             edades[i] = sc.nextInt();
         }
 
-        System.out.println("Edades introducidas:");
+        int min = edades[0];
+        int max = edades[0];
 
         for (int e : edades) {
-            System.out.println(e);
+
+            if (e < min) {
+                min = e;
+            }
+
+            if (e > max) {
+                max = e;
+            }
         }
+
+        System.out.println("Edad mínima: " + min);
+        System.out.println("Edad máxima: " + max);
     }
 }
