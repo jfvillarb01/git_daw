@@ -6,26 +6,24 @@ public class Ejercicio2 {
         Scanner sc = new Scanner(System.in);
         int[] edades = new int[5];
 
+        int mayores = 0;
+        int menores = 0;
+
         for (int i = 0; i < 5; i++) {
             System.out.print("Introduce una edad: ");
             edades[i] = sc.nextInt();
         }
 
-        int min = edades[0];
-        int max = edades[0];
-
         for (int e : edades) {
 
-            if (e < min) {
-                min = e;
-            }
-
-            if (e > max) {
-                max = e;
+            if (e >= 18) {
+                mayores++;
+            } else {
+                menores++;
             }
         }
 
-        System.out.println("Edad mínima: " + min);
-        System.out.println("Edad máxima: " + max);
+        System.out.println("Mayores de edad: " + mayores);
+        System.out.println("Menores de edad: " + menores);
     }
 }
