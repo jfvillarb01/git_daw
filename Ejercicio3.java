@@ -1,10 +1,11 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.Random;
 
 public class Ejercicio3 {
 
     public static void main(String[] args) {
 
+        Scanner sc = new Scanner(System.in);
         Random r = new Random();
 
         int[] numeros = new int[10];
@@ -14,34 +15,34 @@ public class Ejercicio3 {
             numeros[i] = r.nextInt(100) + 1;
         }
 
-        ArrayList<Integer> pares = new ArrayList<>();
-        ArrayList<Integer> impares = new ArrayList<>();
-
-        // Separar números pares e impares
-        for (int n : numeros) {
-
-            if (n % 2 == 0)
-                pares.add(n);
-            else
-                impares.add(n);
-
-        }
-
-        // Mostrar resultados
+        // Mostrar números generados
         System.out.println("Números generados:");
         for (int n : numeros) {
             System.out.print(n + " ");
         }
 
-        System.out.println("\n\nNúmeros pares:");
-        for (int p : pares) {
-            System.out.print(p + " ");
+        System.out.println();
+
+        // Buscar número
+        System.out.print("Número a buscar: ");
+        int buscar = sc.nextInt();
+
+        boolean encontrado = false;
+
+        for (int i = 0; i < numeros.length; i++) {
+
+            if (numeros[i] == buscar) {
+
+                System.out.println("Encontrado en posición " + i);
+                encontrado = true;
+
+            }
+
         }
 
-        System.out.println("\n\nNúmeros impares:");
-        for (int i : impares) {
-            System.out.print(i + " ");
-        }
+        if (!encontrado)
+            System.out.println("No existe");
 
+        sc.close();
     }
 }
